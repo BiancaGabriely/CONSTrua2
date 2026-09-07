@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTrua - Explorar cursos</title>
+
+    <!--boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!--navbar-->
+    <div id="navbar-container"></div>
+
+    <main class="container my-4">
+
+        <!-- BANNER HERO -->
+        <section class="banner bg-primary text-white rounded-4 p-4 p-md-5 mb-5">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-7">
+
+                    <h1 class="slogan display-6 mb-3">CONSTrua seu futuro aqui.</h1>
+                    <p class="texto-explicativo fs-6 text-white-50 mb-4">
+                        Acesse cursos, receba certificados. Comece sua jornada hoje e domine as habilidades de amanhã. 
+                        <br> CONSTrua.
+                    </p>
+
+                    <div class="d-flex gap-2">
+
+                        <button class="btnExplorar btn-light text-primary fw-bold">Explorar Cursos</button>
+                        <button class="btnFunciona btn-outline-light fw-bold">Como funciona</button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 d-flex justify-content-lg-end">
+
+                    <div class="card card-conquista border-0 rounded-4 p-3 shadow-sm">
+
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-success-subtle text-success p-2 rounded-circle">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </span>
+                            <span class="textConquista fw-bold text-muted small">MAIOR CONQUISTA</span>
+                        </div>
+
+                        <h5 class="especialista mb-3 fs-6">Especialista em Ciência de Dados</h5>
+
+                        <div class="progress mb-3" style="height: 6px;">
+                            <div class="progress-bar bg-success" style="width: 80%"></div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+
+                            <div class="text-muted fs-5">
+                                <i class="bi bi-person-circle"></i>
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+
+                            <span class="alunos-online text-muted fw-bold">+12k alunos online</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SEÇÃO: CONTINUAR APRENDENDO -->
+        <section class="mb-5">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+
+                <h2 class="continuarAprendendo fw-bold mb-0">Continuar Aprendendo</h2>
+                <a href="#" class="text-decoration-none small fw-bold">Ver Painel</a>
+
+            </div>
+
+            <div class="row g-3">
+
+
+                <div class="col-md-4">
+                    <div class="card card-curso border rounded-3 p-3">
+
+                        <div class="d-flex gap-3">
+                            <img src="https://via.placeholder.com/90x70" class="rounded object-fit-cover" alt="Curso">
+
+                            <div class="d-flex flex-column justify-content-between w-100">
+
+                                <span class="capitulo fw-bold info-top">CAPÍTULO 4 DE 12</span>
+                                <h6 class="fw-bold mb-1 titulo-curso">Padrões Avançados de React</h6>
+
+                                <div class="d-flex align-items-center gap-2 mb-1">
+
+                                    <div class="progress w-100" style="height: 4px;">
+
+                                        <div class="progress-bar" style="width: 35%;"></div>
+                                    </div>
+
+                                    <span class="small text-muted">35%</span>
+
+                                </div>
+
+                                <a href="#" class="text-decoration-none small fw-bold">Retomar Aula <i
+                                        class="bi bi-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Card Curso 2 -->
+                <div class="col-md-4">
+
+                    <div class="card card-curso border rounded-3 p-3">
+
+                        <div class="d-flex gap-3">
+                            <img src="https://via.placeholder.com/90x70" class="rounded object-fit-cover" alt="Curso">
+
+                            <div class="d-flex flex-column justify-content-between w-100">
+
+                                <span class="capitulo fw-bold info-top">CAPÍTULO 8 DE 10</span>
+                                <h6 class="fw-bold mb-1 titulo-curso">Visualização de Dados para Pro</h6>
+
+                                <div class="d-flex align-items-center gap-2 mb-1">
+
+                                    <div class="progress w-100" style="height: 4px;">
+                                        <div class="progress-bar" style="width: 82%;"></div>
+                                    </div>
+                                    <span class="small text-muted">82%</span>
+
+                                </div>
+
+                                <a href="#" class="text-decoration-none small fw-bold">Retomar Aula <i class="bi bi-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Card Extra (Tracejado) -->
+                <div class="col-md-4">
+
+                    <div
+                        class="card card-outrosCursos border-dashed rounded-3 p-3 text-center d-flex flex-column justify-content-center align-items-center text-muted">
+                        <div
+                            class="icone-mais border rounded-circle d-flex align-items-center justify-content-center mb-2">
+                            <i class="bi bi-plus"></i>
+                        </div>
+                        <span class="small">Inscrito em outros 2 cursos</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO: EXPLORAR CATEGORIAS -->
+        <section class="mb-5">
+            <h2 class="explorar-categorias fw-bold mb-3">Explorar Categorias</h2>
+
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-6 g-3">
+
+                <div class="col">
+                    <div class="card card-categoria border rounded-3 p-3 text-center align-items-center">
+                        <div class="icone-box bg-primary-subtle text-primary rounded-circle mb-2">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <span class="fw-bold nome-categoria">Desenvolvimento</span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-categoria border rounded-3 p-3 text-center align-items-center">
+                        <div class="icone-box bg-secondary-subtle text-secondary rounded-circle mb-2">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <span class="fw-bold nome-categoria">Finanças</span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-categoria border rounded-3 p-3 text-center align-items-center">
+                        <div class="icone-box bg-success-subtle text-success rounded-circle mb-2">
+                            <i class="bi bi-pencil-fill"></i>
+                        </div>
+                        <span class="fw-bold nome-categoria">Design</span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-categoria border rounded-3 p-3 text-center align-items-center">
+                        <div class="icone-box bg-danger-subtle text-danger rounded-circle mb-2">
+                            <i class="bi bi-megaphone-fill"></i>
+                        </div>
+                        <span class="fw-bold nome-categoria">Marketing</span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-categoria border rounded-3 p-3 text-center align-items-center">
+                        <div class="icone-box bg-purple-subtle text-purple rounded-circle mb-2">
+                            <i class="bi bi-person-heart"></i>
+                        </div>
+                        <span class="fw-bold nome-categoria">Habilidades Sociais</span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-categoria border rounded-3 p-3 text-center align-items-center">
+                        <div class="icone-box bg-info-subtle text-info rounded-circle mb-2">
+                            <i class="bi bi-grid-3x3-gap-fill"></i>
+                        </div>
+                        <span class="fw-bold nome-categoria">Todos os 40+ Temas</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+
+                <div>
+                    <h2 class="cursos-em-destaque fw-bold mb-1">Cursos em Destaque</h2>
+                    <p class="text-muted small mb-0">Seleções escolhidas a dedo para acelerar o crescimento da sua
+                        carreira.</p>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-secondary rounded-circle btn-nav"><i
+                            class="bi bi-chevron-left"></i></button>
+                    <button class="btn btn-outline-secondary rounded-circle btn-nav"><i
+                            class="bi bi-chevron-right"></i></button>
+                </div>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="card card-destaque h-100 rounded-3 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&q=80" class="card-img-top capa-curso" alt="Engenharia de Prompt">
+                        
+                        <div class="card-body d-flex flex-column">
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary-subtle text-primary badge-categoria fw-bold">Inteligência
+                                    Artificial</span>
+                                <span class="small text-warning fw-bold"><i class="bi bi-star-fill me-1"></i>4.9</span>
+                            </div>
+
+                            <h5 class="card-title fs-6 fw-bold mb-2">Engenharia de Prompt & IA Generativa</h5>
+                            <p class="card-text text-muted small flex-grow-1">Aprenda a criar prompts eficientes para modelos LLM e automatize processos.</p>
+
+                            <hr class="my-3 opacity-25">
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="small text-secondary fw-medium">Prof. Ana Silva</span>
+                                <span class="badge bg-success-subtle text-success fw-bold px-2 py-1">Gratuito</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="card card-destaque h-100 rounded-3 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&q=80" class="card-img-top capa-curso" alt="UI/UX Design">
+
+                        <div class="card-body d-flex flex-column">
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success-subtle text-success badge-categoria fw-bold">Design</span>
+                                <span class="small text-warning fw-bold"><i class="bi bi-star-fill me-1"></i>4.8</span>
+                            </div>
+
+                            <h5 class="card-title fs-6 fw-bold mb-2">UI/UX Design Masterclass 2024</h5>
+                            <p class="card-text text-muted small flex-grow-1">Do Figma ao protótipo final: construa
+                                interfaces modernas e focadas no usuário.</p>
+
+                            <hr class="my-3 opacity-25">
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="small text-secondary fw-medium">Prof. Lucas Prado</span>
+                                <span class="badge bg-success-subtle text-success fw-bold px-2 py-1">Gratuito</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="card card-destaque h-100 rounded-3 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&q=80" class="card-img-top capa-curso" alt="Node.js">
+
+                        <div class="card-body d-flex flex-column">
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span
+                                    class="badge bg-info-subtle text-info badge-categoria fw-bold">Desenvolvimento</span>
+                                <span class="small text-warning fw-bold"><i class="bi bi-star-fill me-1"></i>4.9</span>
+                            </div>
+
+                            <h5 class="card-title fs-6 fw-bold mb-2">Backend com Node.js, Express & Mongo</h5>
+                            <p class="card-text text-muted small flex-grow-1">Desenvolva APIs RESTful escaláveis e
+                                arquitetura de microserviços.</p>
+
+                            <hr class="my-3 opacity-25">
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="small text-secondary fw-medium">Prof. Carlos Eduardo</span>
+                                <span class="badge bg-success-subtle text-success fw-bold px-2 py-1">Gratuito</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="card card-destaque h-100 rounded-3 overflow-hidden shadow-sm">
+
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" class="card-img-top capa-curso" alt="Marketing Digital">
+
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span
+                                    class="badge bg-danger-subtle text-danger badge-categoria fw-bold">Marketing</span>
+                                <span class="small text-warning fw-bold"><i class="bi bi-star-fill me-1"></i>4.7</span>
+                            </div>
+
+                            <h5 class="card-title fs-6 fw-bold mb-2">Gestão de Tráfego Pago & Ads</h5>
+                            <p class="card-text text-muted small flex-grow-1">Domine campanhas no Google Ads, Meta Ads e analise métricas de conversão.</p>
+
+                            <hr class="my-3 opacity-25">
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="small text-secondary fw-medium">Profª. Mariana Costa</span>
+                                <span class="badge bg-success-subtle text-success fw-bold px-2 py-1">Gratuito</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/assets/reutilizaveis/navbar/navbar.js"></script>
+</body>
+
+</html>

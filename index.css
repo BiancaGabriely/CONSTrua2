@@ -1,0 +1,194 @@
+/* 
+CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+:root {
+  --primary-color: #0d6efd;
+  --transition-speed: 0.25s;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/*
+   SEÇÃO 1: BANNER  */
+.banner {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+
+.slogan {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.texto-explicativo {
+  max-width: 540px;
+}
+
+.btnExplorar {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+.btnExplorar:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+.btnFunciona {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  transition: all var(--transition-speed) ease;
+}
+
+.btnFunciona:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+  color: #fff;
+}
+
+.card-conquista {
+  background-color: #ffffff;
+  max-width: 320px;
+  width: 100%;
+}
+
+.textConquista {
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.especialista {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.alunos-online {
+  font-size: 0.8rem;
+}
+
+/* SEÇÃO 2: CONTINUAR APRENDENDO */
+.continuarAprendendo {
+  font-size: 1.35rem;
+}
+
+.card-curso {
+  background-color: #fff;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card-curso:hover {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-top {
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+}
+
+.titulo-curso {
+  font-size: 0.95rem;
+  color: #212529;
+}
+
+.card-outrosCursos {
+  height: 100%;
+  min-height: 105px;
+  background-color: #fff;
+  border-style: dashed !important;
+  border-width: 2px !important;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.card-outrosCursos:hover {
+  background-color: #f1f3f5;
+}
+
+.icone-mais {
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+}
+
+/* SEÇÃO 3: EXPLORAR CATEGORIAS  */
+.explorar-categorias {
+  font-size: 1.35rem;
+}
+
+.card-categoria {
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card-categoria:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.icone-box {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.nome-categoria {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* Utilitário para o tom roxo (não nativo no BS5 standard) */
+.bg-purple-subtle {
+  background-color: #ebe5ff !important;
+}
+
+.text-purple {
+  color: #6f42c1 !important;
+}
+
+/* SEÇÃO 4: CURSOS EM DESTAQUE */
+.cursos-em-destaque {
+  font-size: 1.35rem;
+}
+
+.btn-nav {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-destaque {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card-destaque:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+.capa-curso {
+  height: 160px;
+  object-fit: cover;
+}
+
+.badge-categoria {
+  font-size: 0.7rem;
+  letter-spacing: 0.3px;
+}
