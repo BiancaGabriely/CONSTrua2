@@ -1,0 +1,44 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "titulo": "Engenharia de Prompt & IA Generativa",
+      "descricao": "Aprenda a criar prompts eficientes para modelos LLM e automatize processos.",
+      "categoria": "Inteligência Artificial",
+      "professor": "Ana Silva",
+      "avaliacao": 4.9,
+      "preco": "Gratuito",
+      "imagem": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&q=80"
+    },
+    {
+      "id": 2,
+      "titulo": "UI/UX Design Masterclass 2024",
+      "descricao": "Do Figma ao protótipo final: construa interfaces modernas e focadas no usuário.",
+      "categoria": "Design",
+      "professor": "Lucas Prado",
+      "avaliacao": 4.8,
+      "preco": "Gratuito",
+      "imagem": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&q=80"
+    },
+    {
+      "id": 3,
+      "titulo": "Backend com Node.js, Express & Mongo",
+      "descricao": "Desenvolva APIs RESTful escaláveis e arquitetura de microserviços.",
+      "categoria": "Desenvolvimento",
+      "professor": "Carlos Eduardo",
+      "avaliacao": 4.9,
+      "preco": "Gratuito",
+      "imagem": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&q=80"
+    },
+    {
+      "id": 4,
+      "titulo": "Gestão de Tráfego Pago & Ads",
+      "descricao": "Domine campanhas no Google Ads, Meta Ads e analise métricas de conversão.",
+      "categoria": "Marketing",
+      "professor": "Mariana Costa",
+      "avaliacao": 4.7,
+      "preco": "Gratuito",
+      "imagem": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80"
+    }
+  ]
+}

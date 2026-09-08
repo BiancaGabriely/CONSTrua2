@@ -12,3 +12,5 @@ fetch("../assets/reutilizaveis/navbar/navbar.html")
     .catch(erro => {
         console.error("Erro ao carregar a navbar:", erro);
     });
+
+
