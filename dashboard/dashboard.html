@@ -8,7 +8,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+<!-- Bootstrap Icons -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+>
 
 <!-- CSS DA NAVBAR -->
 <link rel="stylesheet" href="../assets/reutilizaveis/navbar/navbar.css">
@@ -22,27 +31,40 @@
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<title>Dashboard</title>
+<title>Dashboard - CONSTrua</title>
 
 </head>
 
+
 <body>
- 
+
+
 <!-- NAVBAR -->
+
 <div id="navbar-container"></div>
 
 
+
 <!-- CONTEÚDO -->
-<main class="container-fluid py-4">
+
+<main class="container-fluid dashboard-container py-4">
+
 
     <!-- BOAS-VINDAS -->
-    <section class="mb-4">
 
-        <div class="d-flex justify-content-between align-items-center">
+    <section class="boas-vindas mb-4">
 
-            <div>
+        <div class="row align-items-center">
 
-                <h2>Bem-vinda de volta, Sarah!</h2>
+            <div class="col-md-8">
+
+                <span class="texto-pequeno">
+                    MEU PAINEL
+                </span>
+
+                <h1>
+                    Bem-vinda de volta, Sarah!
+                </h1>
 
                 <p>
                     Você completou 75% da sua meta semanal.
@@ -51,40 +73,77 @@
 
             </div>
 
-            <button id="btn-continuar" class="btn btn-primary">
-                Continuar Aprendendo
-            </button>
+
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+
+                <button
+                    id="btn-continuar"
+                    class="btn btn-continuar"
+                >
+
+                    <i class="bi bi-play-fill me-2"></i>
+
+                    Continuar aprendendo
+
+                </button>
+
+            </div>
 
         </div>
 
     </section>
 
 
+
     <!-- RESUMO -->
+
     <section class="row g-4">
 
+
         <!-- GRÁFICO -->
-        <div class="col-lg-6">
+
+        <div class="col-12 col-lg-6">
 
             <div class="card card-dashboard h-100">
 
                 <div class="card-body">
 
-                    <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="cabecalho-card">
 
-                        <h5 class="mb-0">
-                            Conquistas
-                        </h5>
+                        <div>
 
-                        <select id="seletor-periodo" class="form-select form-select-sm w-auto">
+                            <span class="titulo-pequeno">
+                                DESEMPENHO
+                            </span>
 
-                            <option>Esta Semana</option>
-                            <option>Este Mês</option>
-                            <option>Este Ano</option>
+                            <h5>
+                                Conquistas
+                            </h5>
+
+                        </div>
+
+
+                        <select
+                            id="seletor-periodo"
+                            class="form-select form-select-sm"
+                        >
+
+                            <option>
+                                Esta Semana
+                            </option>
+
+                            <option>
+                                Este Mês
+                            </option>
+
+                            <option>
+                                Este Ano
+                            </option>
 
                         </select>
 
                     </div>
+
 
                     <div class="grafico-container">
 
@@ -99,35 +158,65 @@
         </div>
 
 
+
         <!-- XP E TEMPO -->
-        <div class="col-lg-3">
+
+        <div class="col-12 col-md-6 col-lg-3">
+
 
             <!-- XP -->
-            <div class="card card-xp mb-3">
+
+            <div class="card card-estatistica card-xp mb-4">
 
                 <div class="card-body">
 
-                    <small>✦</small>
+                    <div class="icone-estatistica">
 
-                    <h6>Créditos do Curso</h6>
+                        <i class="bi bi-lightning-charge-fill"></i>
 
-                    <h3>1,240 XP</h3>
+                    </div>
+
+                    <span>
+                        Créditos do Curso
+                    </span>
+
+                    <h3>
+                        1,240 XP
+                    </h3>
+
+                    <small>
+                        +12% esta semana
+                    </small>
 
                 </div>
 
             </div>
 
 
+
             <!-- TEMPO -->
-            <div class="card card-tempo">
+
+            <div class="card card-estatistica card-tempo">
 
                 <div class="card-body">
 
-                    <small>◷</small>
+                    <div class="icone-estatistica">
 
-                    <h6>Tempo Gasto</h6>
+                        <i class="bi bi-clock-fill"></i>
 
-                    <h3>42.5 h</h3>
+                    </div>
+
+                    <span>
+                        Tempo Gasto
+                    </span>
+
+                    <h3>
+                        42.5 h
+                    </h3>
+
+                    <small>
+                        Esta semana
+                    </small>
 
                 </div>
 
@@ -136,43 +225,83 @@
         </div>
 
 
-        <!-- CONQUISTAS -->
-        <div class="col-lg-3">
 
-            <div class="card card-dashboard h-100">
+        <!-- CONQUISTAS -->
+
+        <div class="col-12 col-md-6 col-lg-3">
+
+            <div class="card card-dashboard card-conquistas h-100">
 
                 <div class="card-body">
 
-                    <h5>
-                        Conquistas
-                    </h5>
+                    <div class="cabecalho-conquistas">
 
-                    <ul class="list-group list-group-flush">
+                        <div>
 
-                        <li class="list-group-item">
+                            <span class="titulo-pequeno">
+                                DESTAQUES
+                            </span>
 
-                            🏅
+                            <h5>
+                                Conquistas
+                            </h5>
 
-                            <strong>7-Day Streak</strong>
+                        </div>
 
-                            <small>Consistente</small>
+                        <i class="bi bi-trophy-fill icone-trofeu"></i>
 
-                        </li>
+                    </div>
 
-                        <li class="list-group-item">
 
-                            ⭐
+                    <div class="conquista">
 
-                            <strong>Sequência de 7 dias</strong>
+                        <div class="icone-conquista">
 
-                            <small>Estudante consistente</small>
+                            <i class="bi bi-fire"></i>
 
-                        </li>
+                        </div>
 
-                    </ul>
+                        <div>
+
+                            <strong>
+                                7-Day Streak
+                            </strong>
+
+                            <small>
+                                Estudante consistente
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="conquista">
+
+                        <div class="icone-conquista">
+
+                            <i class="bi bi-star-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Primeira sequência
+                            </strong>
+
+                            <small>
+                                7 dias de estudos
+                            </small>
+
+                        </div>
+
+                    </div>
+
 
                     <a href="#" class="medalhas">
                         Ver todas as 12 medalhas
+                        <i class="bi bi-arrow-right ms-1"></i>
                     </a>
 
                 </div>
@@ -184,23 +313,52 @@
     </section>
 
 
+
     <!-- CURSOS -->
-    <section class="mt-5">
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
+    <section class="cursos-section mt-5">
 
-            <h3>
-                Cursos Matriculados
-            </h3>
+
+        <div class="cabecalho-cursos mb-4">
 
             <div>
 
-                <button id="btn-visualizacao-grid" class="btn btn-outline-secondary">
-                    ▦
+                <span class="titulo-pequeno">
+                    MEUS ESTUDOS
+                </span>
+
+                <h2>
+                    Cursos Matriculados
+                </h2>
+
+                <p>
+                    Continue seus estudos de onde parou.
+                </p>
+
+            </div>
+
+
+            <div class="botoes-visualizacao">
+
+                <button
+                    id="btn-visualizacao-grid"
+                    class="btn btn-visualizacao ativo"
+                    title="Visualização em grade"
+                >
+
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+
                 </button>
 
-                <button  id="btn-visualizacao-lista" class="btn btn-outline-secondary">
-                    ☰
+
+                <button
+                    id="btn-visualizacao-lista"
+                    class="btn btn-visualizacao"
+                    title="Visualização em lista"
+                >
+
+                    <i class="bi bi-list"></i>
+
                 </button>
 
             </div>
@@ -208,15 +366,34 @@
         </div>
 
 
-        <div  id="lista-cursos" class="row g-4">
+
+        <!-- LISTA DE CURSOS -->
+
+        <div
+            id="lista-cursos"
+            class="row g-4"
+        >
 
 
             <!-- CURSO 1 -->
-            <div class="col-md-4">
 
-                <div class="card curso-card">
+            <div class="col-12 col-md-6 col-lg-4">
 
-                    <img>
+                <div class="card curso-card h-100">
+
+                    <div class="capa-container">
+
+                        <img
+                            src=""
+                            alt="Advanced UI Design Systems"
+                        >
+
+                        <span class="badge-curso">
+                            Design
+                        </span>
+
+                    </div>
+
 
                     <div class="card-body">
 
@@ -224,20 +401,37 @@
                             Advanced UI Design Systems
                         </h5>
 
-                        <p>
+                        <p class="modulo">
+                            <i class="bi bi-book me-1"></i>
                             Módulo 4 de 12
                         </p>
+
+
+                        <div class="progresso-info">
+
+                            <span>
+                                Progresso
+                            </span>
+
+                            <strong>
+                                40%
+                            </strong>
+
+                        </div>
+
 
                         <div class="progress">
 
                             <div
                                 class="progress-bar"
-                                style="width: 40%">
+                                style="width: 40%"
+                            >
                             </div>
 
                         </div>
 
-                        <small>
+
+                        <small class="texto-progresso">
                             40% concluído
                         </small>
 
@@ -248,32 +442,64 @@
             </div>
 
 
+
             <!-- CURSO 2 -->
-            <div class="col-md-4">
 
-                <div class="card curso-card">
+            <div class="col-12 col-md-6 col-lg-4">
 
-                    <img src="" alt="">
+                <div class="card curso-card h-100">
+
+                    <div class="capa-container">
+
+                        <img
+                            src=""
+                            alt="React Patterns for Scale"
+                        >
+
+                        <span class="badge-curso">
+                            Desenvolvimento
+                        </span>
+
+                    </div>
+
+
                     <div class="card-body">
 
                         <h5>
                             React Patterns for Scale
                         </h5>
 
-                        <p>
+                        <p class="modulo">
+                            <i class="bi bi-book me-1"></i>
                             Módulo 6 de 10
                         </p>
+
+
+                        <div class="progresso-info">
+
+                            <span>
+                                Progresso
+                            </span>
+
+                            <strong>
+                                60%
+                            </strong>
+
+                        </div>
+
 
                         <div class="progress">
 
                             <div
                                 class="progress-bar"
-                                style="width: 60%">
+                                style="width: 60%"
+                            >
                             </div>
 
                         </div>
 
-                        <small>
+
+                        <small class="texto-progresso">
                             60% concluído
                         </small>
 
@@ -284,11 +510,26 @@
             </div>
 
 
-            <!-- CURSO 3 -->
-            <div class="col-md-4">
 
-                <div class="card curso-card">
-                    <img src="" alt="">
+            <!-- CURSO 3 -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card curso-card h-100">
+
+                    <div class="capa-container">
+
+                        <img
+                            src=""
+                            alt="Growth Marketing 2024"
+                        >
+
+                        <span class="badge-curso">
+                            Marketing
+                        </span>
+
+                    </div>
+
 
                     <div class="card-body">
 
@@ -296,20 +537,37 @@
                             Growth Marketing 2024
                         </h5>
 
-                        <p>
+                        <p class="modulo">
+                            <i class="bi bi-book me-1"></i>
                             Módulo 1 de 8
                         </p>
+
+
+                        <div class="progresso-info">
+
+                            <span>
+                                Progresso
+                            </span>
+
+                            <strong>
+                                12%
+                            </strong>
+
+                        </div>
+
 
                         <div class="progress">
 
                             <div
                                 class="progress-bar"
-                                style="width: 12%">
+                                style="width: 12%"
+                            >
                             </div>
 
                         </div>
 
-                        <small>
+
+                        <small class="texto-progresso">
                             12% concluído
                         </small>
 
@@ -319,18 +577,25 @@
 
             </div>
 
+
         </div>
 
     </section>
 
+
 </main>
 
 
+
 <!-- NAVBAR JS -->
+
 <script src="../assets/reutilizaveis/navbar/navbar.js"></script>
 
+
 <!-- DASHBOARD JS -->
+
 <script src="dashboard.js"></script>
+
 
 </body>
 

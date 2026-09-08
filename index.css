@@ -1,194 +1,395 @@
-/* 
-CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+/* CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+
 :root {
+
   --primary-color: #0d6efd;
+
   --transition-speed: 0.25s;
+
 }
 
 body {
+
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
   background-color: #f8f9fa;
+
   color: #212529;
+
 }
 
-/*
-   SEÇÃO 1: BANNER  */
+
+/* SEÇÃO 1: BANNER */
+
 .banner {
+
   background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+
 }
 
 .slogan {
+
   font-weight: 700;
+
   letter-spacing: -0.5px;
+
 }
 
 .texto-explicativo {
+
   max-width: 540px;
+
 }
 
+
+/* botão explorar */
+
 .btnExplorar {
+
+  display: inline-block;
+
   padding: 0.6rem 1.4rem;
+
   border-radius: 0.5rem;
+
   border: none;
-  transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+
+  background-color: #ffffff;
+
+  color: #0d6efd !important;
+
+  text-decoration: none !important;
+
+  font-weight: 600;
+
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease,
+    background-color var(--transition-speed) ease;
+
 }
 
 .btnExplorar:hover {
-  opacity: 0.95;
+
+  background-color: #f1f5ff;
+
+  color: #0a58ca !important;
+
   transform: translateY(-2px);
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+
 }
 
+
+/* botão como funciona */
+
 .btnFunciona {
+
+  display: inline-block;
+
   padding: 0.6rem 1.4rem;
+
   border-radius: 0.5rem;
+
   background: transparent;
+
   border: 1.5px solid rgba(255, 255, 255, 0.6);
-  color: #fff;
-  transition: all var(--transition-speed) ease;
+
+  color: #fff !important;
+
+  text-decoration: none !important;
+
+  font-weight: 500;
+
+  transition:
+    all var(--transition-speed) ease;
+
 }
 
 .btnFunciona:hover {
+
   background-color: rgba(255, 255, 255, 0.15);
+
   border-color: #fff;
-  color: #fff;
+
+  color: #fff !important;
+
+  transform: translateY(-2px);
+
 }
 
+
 .card-conquista {
+
   background-color: #ffffff;
+
   max-width: 320px;
+
   width: 100%;
+
 }
 
 .textConquista {
+
   font-size: 0.7rem;
+
   letter-spacing: 0.5px;
+
 }
 
 .especialista {
+
   color: #1a1a1a;
+
   font-weight: 700;
+
 }
 
 .alunos-online {
+
   font-size: 0.8rem;
+
 }
 
+
 /* SEÇÃO 2: CONTINUAR APRENDENDO */
+
 .continuarAprendendo {
+
   font-size: 1.35rem;
+
+  font-weight: 700;
+
 }
 
 .card-curso {
+
   background-color: #fff;
-  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+  border: 1px solid #e9ecef;
+
+  border-radius: 12px;
+
+  transition:
+    transform var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+
 }
 
 .card-curso:hover {
+
+  transform: translateY(-4px);
+
   border-color: var(--primary-color) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
 }
 
 .info-top {
+
   font-size: 0.65rem;
+
   letter-spacing: 0.5px;
+
   color: #6c757d;
+
 }
 
 .titulo-curso {
+
   font-size: 0.95rem;
+
   color: #212529;
+
+  font-weight: 600;
+
 }
 
 .card-outrosCursos {
+
   height: 100%;
+
   min-height: 105px;
+
   background-color: #fff;
+
   border-style: dashed !important;
+
   border-width: 2px !important;
+
   cursor: pointer;
-  transition: background-color var(--transition-speed) ease;
+
+  transition:
+    background-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+
 }
 
 .card-outrosCursos:hover {
+
   background-color: #f1f3f5;
+
+  transform: translateY(-3px);
+
 }
 
 .icone-mais {
+
   width: 32px;
+
   height: 32px;
+
   font-size: 1.2rem;
+
 }
 
-/* SEÇÃO 3: EXPLORAR CATEGORIAS  */
+
+/* SEÇÃO 3: EXPLORAR CATEGORIAS */
+
 .explorar-categorias {
+
   font-size: 1.35rem;
+
+  font-weight: 700;
+
 }
 
 .card-categoria {
+
   background-color: #fff;
+
   cursor: pointer;
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+  border: 1px solid #e9ecef;
+
+  border-radius: 12px;
+
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease,
+    border-color var(--transition-speed) ease;
+
 }
 
 .card-categoria:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+
+  transform: translateY(-5px);
+
+  border-color: #d5e3ff;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
 }
 
 .icone-box {
+
   width: 48px;
+
   height: 48px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   font-size: 1.25rem;
+
 }
 
 .nome-categoria {
+
   font-size: 0.85rem;
+
   color: #333;
+
+  font-weight: 600;
+
 }
 
-/* Utilitário para o tom roxo (não nativo no BS5 standard) */
+
+/* Utilitário para o tom roxo */
+
 .bg-purple-subtle {
+
   background-color: #ebe5ff !important;
+
 }
 
 .text-purple {
+
   color: #6f42c1 !important;
+
 }
 
+
 /* SEÇÃO 4: CURSOS EM DESTAQUE */
+
 .cursos-em-destaque {
+
   font-size: 1.35rem;
+
+  font-weight: 700;
+
 }
 
 .btn-nav {
+
   width: 38px;
+
   height: 38px;
+
   padding: 0;
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
+  border-radius: 50%;
+
 }
 
 .card-destaque {
+
   background-color: #fff;
+
   border: 1px solid #e9ecef;
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+
 }
 
 .card-destaque:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+
 }
 
 .capa-curso {
+
   height: 160px;
+
   object-fit: cover;
+
 }
 
 .badge-categoria {
+
   font-size: 0.7rem;
+
   letter-spacing: 0.3px;
+
 }
