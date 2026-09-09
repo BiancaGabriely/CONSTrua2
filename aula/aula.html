@@ -16,6 +16,7 @@
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>CONSTrua - Aula</title>
 
     <link rel="stylesheet" href="aula.css">
@@ -23,9 +24,7 @@
 
 <body>
 
-
     <div id="navbar-container"></div>
-
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="page">
@@ -36,29 +35,16 @@
             <!-- VÍDEO -->
             <div class="video">
 
-                <div class="video-background">
-
-                    <div class="screen">
-
-                        <div class="screen-title">
-                            ADVANCED NEURAL NETWORKS
-                        </div>
-
-                        <div class="chart chart-1"></div>
-
-                        <div class="chart chart-2"></div>
-
-                        <div class="circle"></div>
-
-                        <div class="mini-line"></div>
-
-                    </div>
-
-                </div>
-
-                <button id="btn-play" class="play">
-                    ▶
-                </button>
+                <iframe
+                    id="video-aula"
+                    width="100%"
+                    height="100%"
+                    src=""
+                    title="Vídeo da aula"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
 
             </div>
 
@@ -80,15 +66,9 @@
             <!-- TÍTULO -->
             <div class="lesson-header">
 
-                <span class="module">
-                    MÓDULO 4: ARQUITETURA AVANÇADA
-                </span>
+                <span class="module"></span>
 
-                <h1>
-                    04. Compreendendo Modelos
-                    <br>
-                    Transformer e Mecanismos de Atenção
-                </h1>
+                <h1></h1>
 
             </div>
 
@@ -117,64 +97,32 @@
             <!-- RECURSOS -->
             <div id="conteudo-recursos" class="resources">
 
-                <!-- PDF -->
-                <div class="resource">
-
-                    <div class="resource-icon pdf">
-                        ▤
-                    </div>
-
-                    <div class="resource-info">
-
-                        <strong>
-                            Slides da Aula - Modelos Transformer.pdf
-                        </strong>
-
-                        <small>
-                            2.4 MB · Documento PDF
-                        </small>
-
-                    </div>
-
-                    <button class="download">
-                        ⇩
-                    </button>
-
-                </div>
-
-
-                <!-- CÓDIGO -->
-                <div class="resource">
-
-                    <div class="resource-icon code">
-                        &lt;&gt;
-                    </div>
-
-                    <div class="resource-info">
-
-                        <strong>
-                            Exemplos de Código Fonte (Jupyter Notebook)
-                        </strong>
-
-                        <small>
-                            856 KB · Notebook .ipynb
-                        </small>
-
-                    </div>
-
-                    <button class="download">
-                        ⇩
-                    </button>
-
-                </div>
+                <!--
+                    Os materiais de apoio serão carregados
+                    posteriormente pelo JavaScript.
+                -->
 
             </div>
 
-            <!-- Painéis de "Minhas Notas" e "Perguntas e Respostas" ainda não existem.
-                 Quando forem criados, adicione ids como abaixo para o JS já preparado funcionar:
-                 <div id="conteudo-notas" class="..." style="display: none;"> ... </div>
-                 <div id="conteudo-perguntas" class="..." style="display: none;"> ... </div>
-            -->
+
+            <!-- MINHAS NOTAS -->
+            <div id="conteudo-notas" style="display: none;">
+
+                <p>
+                    Minhas notas
+                </p>
+
+            </div>
+
+
+            <!-- PERGUNTAS E RESPOSTAS -->
+            <div id="conteudo-perguntas" style="display: none;">
+
+                <p>
+                    Perguntas e respostas
+                </p>
+
+            </div>
 
         </section>
 
@@ -192,14 +140,18 @@
                     </strong>
 
                     <span id="contador-progresso">
-                        14 / 28 Concluídos
+                        0 / 0 Concluídos
                     </span>
 
                 </div>
 
                 <div class="progress">
 
-                    <div id="barra-progresso" class="progress-bar"></div>
+                    <div
+                        id="barra-progresso"
+                        class="progress-bar"
+                        style="width: 0%;">
+                    </div>
 
                 </div>
 
@@ -209,163 +161,19 @@
             <!-- LISTA DE AULAS -->
             <div class="lesson-list">
 
-
-                <!-- MÓDULO 1 -->
-                <div class="chapter" data-modulo="1">
-
-                    <strong>
-                        MÓDULO 1: Fundamentos
-                    </strong>
-
-                    <span>
-                        ⌄
-                    </span>
-
-                </div>
-
-
-                <!-- MÓDULO 4 -->
-                <div class="chapter open" data-modulo="4">
-
-                    <strong>
-                        MÓDULO 4: Arquitetura Avançada
-                    </strong>
-
-                    <span>
-                        ⌃
-                    </span>
-
-                </div>
-
-
-                <!-- AULA 1 -->
-                <div class="lesson completed" data-modulo="4">
-
-                    <span class="lesson-icon">
-                        ✓
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            01. Introdução à Atenção
-                        </strong>
-
-                        <small>
-                            12:00
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- AULA 2 -->
-                <div class="lesson completed" data-modulo="4">
-
-                    <span class="lesson-icon">
-                        ✓
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            02. Mecanismo de Auto-Atenção
-                        </strong>
-
-                        <small>
-                            18:45
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- AULA ATUAL -->
-                <div class="lesson current" data-modulo="4">
-
-                    <span class="lesson-icon">
-                        ▶
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            03. Mergulho Profundo em Transformers
-                        </strong>
-
-                        <small>
-                            15:30
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- AULA 4 -->
-                <div class="lesson" data-modulo="4">
-
-                    <span class="lesson-icon">
-                        ○
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            04. Teoria da Atenção Multi-Cabeça
-                        </strong>
-
-                        <small>
-                            15:20
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- AULA 5 -->
-                <div class="lesson" data-modulo="4">
-
-                    <span class="lesson-icon">
-                        ○
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            05. Implementação em PyTorch
-                        </strong>
-
-                        <small>
-                            35:00
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MÓDULO 5 -->
-                <div class="chapter locked" data-modulo="5">
-
-                    <strong>
-                        MÓDULO 5: Aplicação no Mundo Real
-                    </strong>
-
-                    <span>
-                        🔒
-                    </span>
-
-                </div>
+                <!--
+                    Os módulos e aulas serão carregados
+                    dinamicamente pelo aula.js.
+                -->
 
             </div>
 
         </aside>
 
     </main>
+
+
+    <!-- NAVBAR JS -->
     <script src="../assets/reutilizaveis/navbar/navbar.js"></script>
 
     <!-- AULA JS -->

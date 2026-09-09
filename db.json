@@ -40,5 +40,396 @@
       "preco": "Gratuito",
       "imagem": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80"
     }
+  ],
+
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "Maria Oliveira",
+      "email": "maria@gmail.com"
+    },
+    {
+      "id": 2,
+      "nome": "João Santos",
+      "email": "joao@gmail.com"
+    }
+  ],
+
+  "matriculas": [
+    {
+      "id": 1,
+      "alunoId": 1,
+      "cursoId": 1,
+      "progresso": 65
+    },
+    {
+      "id": 2,
+      "alunoId": 1,
+      "cursoId": 2,
+      "progresso": 22
+    }
+  ],
+
+  "modulos": [
+    {
+      "id": 1,
+      "cursoId": 1,
+      "titulo": "Fundamentos de IA Generativa",
+      "descricao": "Conceitos fundamentais de inteligência artificial e modelos generativos.",
+      "ordem": 1
+    },
+    {
+      "id": 2,
+      "cursoId": 1,
+      "titulo": "Engenharia de Prompt",
+      "descricao": "Aprenda técnicas para criar prompts eficientes.",
+      "ordem": 2
+    },
+    {
+      "id": 3,
+      "cursoId": 1,
+      "titulo": "Arquitetura Avançada",
+      "descricao": "Estudo de modelos Transformer e mecanismos de atenção.",
+      "ordem": 3
+    },
+
+    {
+      "id": 4,
+      "cursoId": 2,
+      "titulo": "Fundamentos de UI/UX",
+      "descricao": "Introdução aos conceitos de experiência e interface do usuário.",
+      "ordem": 1
+    },
+    {
+      "id": 5,
+      "cursoId": 2,
+      "titulo": "Figma e Prototipagem",
+      "descricao": "Criação de interfaces e protótipos utilizando Figma.",
+      "ordem": 2
+    },
+
+    {
+      "id": 6,
+      "cursoId": 3,
+      "titulo": "Fundamentos de Backend",
+      "descricao": "Conceitos fundamentais para desenvolvimento backend.",
+      "ordem": 1
+    },
+    {
+      "id": 7,
+      "cursoId": 3,
+      "titulo": "Node.js e Express",
+      "descricao": "Construção de APIs utilizando Node.js e Express.",
+      "ordem": 2
+    },
+
+    {
+      "id": 8,
+      "cursoId": 4,
+      "titulo": "Fundamentos de Marketing Digital",
+      "descricao": "Introdução ao marketing digital e aquisição de clientes.",
+      "ordem": 1
+    },
+    {
+      "id": 9,
+      "cursoId": 4,
+      "titulo": "Google Ads e Meta Ads",
+      "descricao": "Criação e gerenciamento de campanhas de anúncios.",
+      "ordem": 2
+    }
+  ],
+
+  "aulas": [
+    {
+      "id": 1,
+      "moduloId": 1,
+      "titulo": "Introdução à Inteligência Artificial",
+      "descricao": "Conheça os principais conceitos de inteligência artificial.",
+      "urlVideo": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "duracaoSegundos": 600,
+      "ordem": 1,
+      "gratuita": true
+    },
+    {
+      "id": 2,
+      "moduloId": 1,
+      "titulo": "O que são Modelos Generativos?",
+      "descricao": "Entenda o funcionamento dos modelos generativos.",
+      "urlVideo": "https://www.youtube.com/watch?v=hfIUstzHs9A",
+      "duracaoSegundos": 900,
+      "ordem": 2,
+      "gratuita": true
+    },
+    {
+      "id": 3,
+      "moduloId": 2,
+      "titulo": "Fundamentos da Engenharia de Prompt",
+      "descricao": "Aprenda os fundamentos para criação de prompts eficientes.",
+      "urlVideo": "https://www.youtube.com/watch?v=dOxUroR57xs",
+      "duracaoSegundos": 780,
+      "ordem": 1,
+      "gratuita": false
+    },
+    {
+      "id": 4,
+      "moduloId": 2,
+      "titulo": "Técnicas de Prompting",
+      "descricao": "Conheça técnicas avançadas de criação de prompts.",
+      "urlVideo": "https://www.youtube.com/watch?v=jC4v5AS4RIM",
+      "duracaoSegundos": 1020,
+      "ordem": 2,
+      "gratuita": false
+    },
+    {
+      "id": 5,
+      "moduloId": 3,
+      "titulo": "Introdução aos Transformers",
+      "descricao": "Entenda a arquitetura dos modelos Transformer.",
+      "urlVideo": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "duracaoSegundos": 930,
+      "ordem": 1,
+      "gratuita": false
+    },
+    {
+      "id": 6,
+      "moduloId": 3,
+      "titulo": "Mecanismo de Auto-Atenção",
+      "descricao": "Aprenda como funciona o mecanismo de self-attention.",
+      "urlVideo": "https://www.youtube.com/watch?v=U0s0f995w14",
+      "duracaoSegundos": 1125,
+      "ordem": 2,
+      "gratuita": false
+    },
+
+    {
+      "id": 7,
+      "moduloId": 4,
+      "titulo": "O que é UI e UX?",
+      "descricao": "Entenda a diferença entre interface e experiência do usuário.",
+      "urlVideo": "https://www.youtube.com/watch?v=c9Wg6Cb_YlU",
+      "duracaoSegundos": 720,
+      "ordem": 1,
+      "gratuita": true
+    },
+    {
+      "id": 8,
+      "moduloId": 4,
+      "titulo": "Princípios de Design",
+      "descricao": "Conheça os principais princípios utilizados no design de interfaces.",
+      "urlVideo": "https://www.youtube.com/watch?v=9BdtGjoIN4E",
+      "duracaoSegundos": 840,
+      "ordem": 2,
+      "gratuita": false
+    },
+    {
+      "id": 9,
+      "moduloId": 5,
+      "titulo": "Conhecendo o Figma",
+      "descricao": "Aprenda a utilizar as principais ferramentas do Figma.",
+      "urlVideo": "https://www.youtube.com/watch?v=FTFaQWZBqQ8",
+      "duracaoSegundos": 1200,
+      "ordem": 1,
+      "gratuita": false
+    },
+    {
+      "id": 10,
+      "moduloId": 5,
+      "titulo": "Criando um Protótipo",
+      "descricao": "Crie seu primeiro protótipo de interface.",
+      "urlVideo": "https://www.youtube.com/watch?v=4W4LvJnNegU",
+      "duracaoSegundos": 1500,
+      "ordem": 2,
+      "gratuita": false
+    },
+
+    {
+      "id": 11,
+      "moduloId": 6,
+      "titulo": "O que é Backend?",
+      "descricao": "Entenda o papel do backend em uma aplicação web.",
+      "urlVideo": "https://www.youtube.com/watch?v=XBu54nfzxAQ",
+      "duracaoSegundos": 720,
+      "ordem": 1,
+      "gratuita": true
+    },
+    {
+      "id": 12,
+      "moduloId": 6,
+      "titulo": "HTTP e APIs",
+      "descricao": "Aprenda os conceitos básicos de HTTP e APIs.",
+      "urlVideo": "https://www.youtube.com/watch?v=qbLc5a9jdXo",
+      "duracaoSegundos": 900,
+      "ordem": 2,
+      "gratuita": false
+    },
+    {
+      "id": 13,
+      "moduloId": 7,
+      "titulo": "Introdução ao Node.js",
+      "descricao": "Conheça o ambiente Node.js.",
+      "urlVideo": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+      "duracaoSegundos": 1080,
+      "ordem": 1,
+      "gratuita": false
+    },
+    {
+      "id": 14,
+      "moduloId": 7,
+      "titulo": "Criando uma API com Express",
+      "descricao": "Construa uma API utilizando Node.js e Express.",
+      "urlVideo": "https://www.youtube.com/watch?v=L72fhGm1tfE",
+      "duracaoSegundos": 1800,
+      "ordem": 2,
+      "gratuita": false
+    },
+
+    {
+      "id": 15,
+      "moduloId": 8,
+      "titulo": "Introdução ao Marketing Digital",
+      "descricao": "Conheça os fundamentos do marketing digital.",
+      "urlVideo": "https://www.youtube.com/watch?v=nU-IIXBWlS4",
+      "duracaoSegundos": 780,
+      "ordem": 1,
+      "gratuita": true
+    },
+    {
+      "id": 16,
+      "moduloId": 8,
+      "titulo": "Estratégias de Aquisição",
+      "descricao": "Aprenda estratégias para conquistar novos clientes.",
+      "urlVideo": "https://www.youtube.com/watch?v=H0GZf9fYfYQ",
+      "duracaoSegundos": 960,
+      "ordem": 2,
+      "gratuita": false
+    },
+    {
+      "id": 17,
+      "moduloId": 9,
+      "titulo": "Google Ads",
+      "descricao": "Aprenda os fundamentos de campanhas no Google Ads.",
+      "urlVideo": "https://www.youtube.com/watch?v=5RoXCs54CN8",
+      "duracaoSegundos": 1200,
+      "ordem": 1,
+      "gratuita": false
+    },
+    {
+      "id": 18,
+      "moduloId": 9,
+      "titulo": "Meta Ads",
+      "descricao": "Aprenda a criar campanhas no Meta Ads.",
+      "urlVideo": "https://www.youtube.com/watch?v=0r7gQx0jT3I",
+      "duracaoSegundos": 1320,
+      "ordem": 2,
+      "gratuita": false
+    }
+  ],
+
+  "progresso_aula": [
+    {
+      "id": 1,
+      "matriculaId": 1,
+      "aulaId": 1,
+      "concluida": true,
+      "segundosAssistidos": 600,
+      "dataConclusao": "2026-09-08"
+    },
+    {
+      "id": 2,
+      "matriculaId": 1,
+      "aulaId": 2,
+      "concluida": true,
+      "segundosAssistidos": 900,
+      "dataConclusao": "2026-09-08"
+    },
+    {
+      "id": 3,
+      "matriculaId": 1,
+      "aulaId": 3,
+      "concluida": false,
+      "segundosAssistidos": 300,
+      "dataConclusao": null
+    },
+    {
+      "id": 4,
+      "matriculaId": 2,
+      "aulaId": 7,
+      "concluida": true,
+      "segundosAssistidos": 720,
+      "dataConclusao": "2026-09-08"
+    }
+  ],
+
+  "materiais_apoio": [
+    {
+      "id": 1,
+      "aulaId": 1,
+      "titulo": "Slides - Introdução à Inteligência Artificial",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/slides-ia.pdf"
+    },
+    {
+      "id": 2,
+      "aulaId": 3,
+      "titulo": "Material - Engenharia de Prompt",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/engenharia-prompt.pdf"
+    },
+    {
+      "id": 3,
+      "aulaId": 5,
+      "titulo": "Slides - Modelos Transformer",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/transformers.pdf"
+    },
+    {
+      "id": 4,
+      "aulaId": 6,
+      "titulo": "Exemplos de Código - Self Attention",
+      "tipo": "Notebook",
+      "urlArquivo": "https://exemplo.com/self-attention.ipynb"
+    },
+    {
+      "id": 5,
+      "aulaId": 7,
+      "titulo": "Slides - Fundamentos de UI/UX",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/ui-ux.pdf"
+    },
+    {
+      "id": 6,
+      "aulaId": 9,
+      "titulo": "Material - Figma",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/figma.pdf"
+    },
+    {
+      "id": 7,
+      "aulaId": 11,
+      "titulo": "Slides - Introdução ao Backend",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/backend.pdf"
+    },
+    {
+      "id": 8,
+      "aulaId": 14,
+      "titulo": "Código Fonte - API Express",
+      "tipo": "ZIP",
+      "urlArquivo": "https://exemplo.com/api-express.zip"
+    },
+    {
+      "id": 9,
+      "aulaId": 15,
+      "titulo": "Slides - Marketing Digital",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/marketing-digital.pdf"
+    },
+    {
+      "id": 10,
+      "aulaId": 17,
+      "titulo": "Guia - Google Ads",
+      "tipo": "PDF",
+      "urlArquivo": "https://exemplo.com/google-ads.pdf"
+    }
   ]
 }
