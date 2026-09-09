@@ -1,0 +1,79 @@
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Esquerda: Categoria, Título e Instrutor */
+.badge-categoria {
+  background-color: #e8f0fe !important;
+  color: #1a73e8 !important;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.card-instrutor {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+}
+
+/* Accordion de Currículo */
+.accordion-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px !important;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: #212529;
+  background-color: #ffffff;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f0f7ff;
+  color: #0d6efd;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* Direita: Card Fixo de Compra */
+.card-compra {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 16px !important;
+}
+
+.sticky-top {
+  top: 24px;
+  z-index: 10;
+}
+
+.capa-preview {
+  height: 220px;
+  border-radius: 12px;
+}
+
+.btn-play {
+  width: 56px;
+  height: 56px;
+  background-color: #ffffff;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.btn-play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.btn-acao {
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 12px;
+}

@@ -56,9 +56,9 @@ body {
 
   background-color: #ffffff;
 
-  color: #0d6efd !important;
+  color: #0d6efd;
 
-  text-decoration: none !important;
+  text-decoration: none;
 
   font-weight: 600;
 
@@ -96,9 +96,9 @@ body {
 
   border: 1.5px solid rgba(255, 255, 255, 0.6);
 
-  color: #fff !important;
+  color: #ffff;
 
-  text-decoration: none !important;
+  text-decoration: none;
 
   font-weight: 500;
 
@@ -117,6 +117,11 @@ body {
 
   transform: translateY(-2px);
 
+}
+
+.btnFunciona a {
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 
@@ -257,7 +262,7 @@ body {
 
 }
 
-.card-categoria {
+.categoria-card {
 
   background-color: #fff;
 
@@ -274,7 +279,7 @@ body {
 
 }
 
-.card-categoria:hover {
+.categoria-card:hover {
 
   transform: translateY(-5px);
 
@@ -333,6 +338,8 @@ body {
   font-size: 1.35rem;
 
   font-weight: 700;
+
+  margin-top: 20px;
 
 }
 

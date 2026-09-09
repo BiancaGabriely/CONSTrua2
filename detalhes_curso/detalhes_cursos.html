@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pagina-titulo">CONSTrua - Detalhes do Curso</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../assets/reutilizaveis/navbar/navbar.css">
+
+    <link rel="stylesheet" href="detalhes_cursos.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <main class="container my-5">
+        <div class="row g-4">
+
+            <!-- COLUNA DA ESQUERDA -->
+            <div class="col-lg-8">
+
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <span id="curso-categoria" class="badge badge-categoria">Ciência da Computação</span>
+                    <span class="small text-warning fw-bold">
+                        <i class="bi bi-star-fill me-1"></i><span id="curso-avaliacao">4.9 (2.3k avaliações)</span>
+                    </span>
+                </div>
+
+                <h1 id="curso-titulo" class="fw-bold mb-3">Arquitetura de Sistemas Avançada: Fundamentos de Nuvem
+                    Escaláveis</h1>
+                <p id="cursoDescricao" class="text-secondary fs-6 mb-4">Domine as complexidades da infraestrutura de
+                    nuvem moderna. Este guia abrangente cobre orquestração de microsserviços, gerenciamento de banco de
+                    dados distribuído e padrões de alta disponibilidade usados por líderes da indústria.</p>
+
+                <!-- Card Instrutor -->
+                <div class="card card-instrutor p-3 mb-5">
+
+                    <div class="d-flex align-items-center gap-3">
+                        <img id="instrutorFoto"
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100"
+                            class="rounded-circle object-fit-cover" width="56" height="56" alt="Instrutor">
+
+                        <div>
+                            <span class="text-muted small fw-bold d-block text-uppercase">Instrutor</span>
+                            <h6 id="instrutorNome" class="fw-bold mb-0">Dr. Marcus Chen</h6>
+                            <span id="instrutorCargo" class="text-muted small">Arquitetos-chefe na NexaCloud e
+                                Palestrante Convidado no MIT</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Currículo -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="fw-bold mb-0">Currículo do Curso</h4>
+                    <span id="curso-resumo-modulos" class="small text-muted fw-medium">12 Módulos • 48 Lições • 24h
+                        Total</span>
+                </div>
+
+                <div class="accordion" id="curriculoAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mod0">
+                                Módulo 1: Fundamentos Nativos da Nuvem
+                            </button>
+                        </h2>
+
+                        <div id="mod0" class="accordion-collapse collapse show" data-bs-parent="#curriculoAccordion">
+
+                            <div class="accordion-body p-0">
+                                <ul class="list-group list-group-flush small">
+                                    <li class="list-group-item d-flex align-items-center gap-2 py-3 px-4">
+                                        <i class="bi bi-play-circle-fill text-primary fs-6"></i> Introdução a Sistemas
+                                        Distribuição
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center gap-2 py-3 px-4">
+                                        <i class="bi bi-play-circle-fill text-primary fs-6"></i> Dockerização e
+                                        Orquestração de Contêineres
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COLUNA DA DIREITA -->
+            <div class="col-lg-4">
+                <div class="card cardCompra p-3 shadow-sm sticky-top">
+
+                    <div class="position-relative mb-3 rounded-3 overflow-hidden">
+                        <img id="curso-thumb" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600"
+                            class="w-100 object-fit-cover capa-preview" alt="Capa do Curso">
+                        <button
+                            class="btn btn-play rounded-circle position-absolute top-50 start-50 translate-middle shadow">
+                            <i class="bi bi-play-fill fs-3 text-primary"></i>
+                        </button>
+                        
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h2 id="cursoPreco" class="fw-bold mb-0 text-success">Gratuito</h2>
+                        <span class="badge bg-success-subtle text-success small fw-bold px-3 py-2">Acesso Livre</span>
+                    </div>
+
+                    <div class="d-grid gap-2 mb-4">
+                        <button class="btn btn-primary btn-acao fs-6">Assine o Curso</button>
+                    </div>
+
+                    <span class="fw-bold small text-muted d-block mb-3 text-uppercase">Este curso inclui:</span>
+                    <ul id="cursoRecursos" class="list-unstyled small text-secondary mb-0 d-grid gap-2">
+                        <li><i class="bi bi-check2-circle me-2 text-success"></i>24 horas de vídeo sob demanda</li>
+                        <li><i class="bi bi-check2-circle me-2 text-success"></i>Certificado de conclusão</li>
+                        <li><i class="bi bi-check2-circle me-2 text-success"></i>Acesso vitalício total</li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/reutilizaveis/navbar/navbar.js"></script>
+    <script src="detalhes_cursos.js"></script>
+</body>
+
+</html>
