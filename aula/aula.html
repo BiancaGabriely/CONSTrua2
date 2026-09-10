@@ -35,13 +35,7 @@
             <!-- VÍDEO -->
             <div class="video">
 
-                <iframe
-                    id="video-aula"
-                    width="100%"
-                    height="100%"
-                    src=""
-                    title="Vídeo da aula"
-                    frameborder="0"
+                <iframe id="video-aula" width="100%" height="100%" src="" title="Vídeo da aula" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>
@@ -58,6 +52,11 @@
 
                 <button id="btn-proxima" class="nav-lesson next">
                     Próxima Aula ›
+                </button>
+
+                <!-- Botão de concluir aula integrado -->
+                <button id="btn-concluir" class="btn btn-outline-success ms-2">
+                    Marcar como Concluída
                 </button>
 
             </div>
@@ -106,22 +105,22 @@
 
 
             <!-- MINHAS NOTAS -->
-            <div id="conteudo-notas" style="display: none;">
-
-                <p>
-                    Minhas notas
-                </p>
-
+            <div id="conteudo-notas" class="mt-3" style="display: none;">
+                <textarea id="texto-nota" class="form-control mb-2" rows="4" placeholder="Escreva suas anotações da aula aqui..."></textarea>
+                <button id="btn-salvar-nota" class="btn btn-primary btn-sm">Salvar Anotação</button>
             </div>
 
 
             <!-- PERGUNTAS E RESPOSTAS -->
-            <div id="conteudo-perguntas" style="display: none;">
-
-                <p>
-                    Perguntas e respostas
-                </p>
-
+            <div id="conteudo-perguntas" class="mt-3" style="display: none;">
+                <div class="mb-3">
+                    <input type="text" id="nova-pergunta" class="form-control mb-2"
+                        placeholder="Tire sua dúvida sobre esta aula...">
+                    <button id="btn-enviar-pergunta" class="btn btn-primary btn-sm">Enviar Pergunta</button>
+                </div>
+                <div id="lista-perguntas" class="mt-3">
+                    <p class="text-muted">Nenhuma pergunta enviada ainda.</p>
+                </div>
             </div>
 
         </section>
@@ -147,10 +146,7 @@
 
                 <div class="progress">
 
-                    <div
-                        id="barra-progresso"
-                        class="progress-bar"
-                        style="width: 0%;">
+                    <div id="barra-progresso" class="progress-bar" style="width: 0%;">
                     </div>
 
                 </div>

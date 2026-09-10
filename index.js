@@ -99,7 +99,6 @@ function mostrarCursos(listaParaExibir) {
 
 // Redireciona para a página de detalhes com o ID do curso
 function abrirCurso(id) {
-    // Certifique-se de que o caminho abaixo corresponda ao local relativo do seu arquivo de detalhes
     window.location.href = `./detalhes_curso/detalhes_cursos.html?id=${id}`; 
 }
 

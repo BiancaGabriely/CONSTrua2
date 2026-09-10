@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let modulos = [];
     let aulas = [];
     let aulaAtual = null;
+    let materiais = [];
 
     //pega os dados da url
     const parametros = new URLSearchParams(window.location.search);
 
-    const cursoId = Number(parametros.get("cursoId"));
-    const aulaId = Number(parametros.get("aulaId"));
+    const cursoId = Number(parametros.get("cursoId")) || 1;
+    const aulaId = Number(parametros.get("aulaId")) || 1;
 
     console.log("Curso:", cursoId);
     console.log("Aula:", aulaId);
@@ -80,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarCurso();
             mostrarModulos();
             mostrarAula();
+            atualizarProgresso();
+            carregarNotas();
 
         } catch (erro) {
 
@@ -196,6 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 modulo.textContent =
                     `MÓDULO ${moduloAtual.ordem}: ${moduloAtual.titulo}`;
             }
+
+            if (btnConcluir) {
+            btnConcluir.textContent = aulaAtual.concluida ? "✓ Concluída" : "Marcar como Concluída";
+            btnConcluir.className = aulaAtual.concluida ? "btn btn-success ms-2" : "btn btn-outline-success ms-2";
+            }
         }
 
         if (video && aulaAtual.urlVideo) {
@@ -208,6 +216,87 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         console.log("Vídeo da aula:", aulaAtual.urlVideo);
+    }
+
+    function mostrarMateriais() {
+        const container = document.getElementById("conteudo-recursos");
+        if (!container) return;
+
+        if (materiais && materiais.length > 0) {
+            container.innerHTML = materiais.map(mat => `
+                <div class="resource-item my-2 p-2 border rounded d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>📄 ${mat.titulo}</strong>
+                        <p class="mb-0 small text-muted">${mat.descricao || ''}</p>
+                    </div>
+                    <a href="${mat.url}" target="_blank" class="btn btn-sm btn-outline-primary">Baixar</a>
+                </div>
+            `).join("");
+        } else {
+            container.innerHTML = "<p class='text-muted p-3'>Nenhum material de apoio disponível para esta aula.</p>";
+        }
+    }
+
+    // atualizando a barra de progresso
+    function atualizarProgresso() {
+        const contador = document.getElementById("contador-progresso");
+        const barra = document.getElementById("barra-progresso");
+
+        const total = aulas.length;
+        if (total === 0) return;
+
+        const concluidas = aulas.filter(a => a.concluida).length;
+        const porcentagem = Math.round((concluidas / total) * 100);
+
+        if (contador) contador.textContent = `${concluidas} / ${total} Concluídos`;
+        if (barra) barra.style.width = `${porcentagem}%`;
+    }
+
+    function carregarNotas() {
+        const campoNota = document.getElementById("texto-nota");
+        if (campoNota && aulaAtual) {
+            campoNota.value = localStorage.getItem(`nota_aula_${aulaAtual.id}`) || "";
+        }
+    }
+
+        // configuração do botão de concluído
+    const btnConcluir = document.getElementById("btn-concluir");
+    if (btnConcluir) {
+        btnConcluir.addEventListener("click", async () => {
+            if (!aulaAtual) return;
+
+            const novoStatus = !aulaAtual.concluida;
+
+            try {
+                await fetch(`${API_URL}/aulas/${aulaAtual.id}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ concluida: novoStatus })
+                });
+
+                aulaAtual.concluida = novoStatus;
+                const aulaArray = aulas.find(a => Number(a.id) === Number(aulaAtual.id));
+                if (aulaArray) aulaArray.concluida = novoStatus;
+
+                mostrarAula();
+                mostrarModulos();
+                atualizarProgresso();
+
+            } catch (erro) {
+                console.error("Erro ao alterar o status da aula:", erro);
+            }
+        });
+    }
+
+    const btnSalvarNota = document.getElementById("btn-salvar-nota");
+    if (btnSalvarNota) {
+        btnSalvarNota.addEventListener("click", () => {
+            const campoNota = document.getElementById("texto-nota");
+            if (campoNota && aulaAtual) {
+                localStorage.setItem(`nota_aula_${aulaAtual.id}`, campoNota.value);
+                alert("Anotação salva com sucesso!");
+            }
+        });
     }
 
     //adiciona os eventos dos módulos

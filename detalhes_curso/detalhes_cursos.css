@@ -6,8 +6,8 @@ body {
 
 /* Esquerda: Categoria, Título e Instrutor */
 .badge-categoria {
-  background-color: #e8f0fe !important;
-  color: #1a73e8 !important;
+  background-color: #e8f0fe;
+  color: #1a73e8;
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 6px;
@@ -15,14 +15,14 @@ body {
 
 .card-instrutor {
   background-color: #ffffff;
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 12px !important;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
 }
 
 /* Accordion de Currículo */
 .accordion-item {
   border: 1px solid #e0e0e0;
-  border-radius: 8px !important;
+  border-radius: 8px;
   margin-bottom: 10px;
   overflow: hidden;
 }
@@ -46,8 +46,8 @@ body {
 /* Direita: Card Fixo de Compra */
 .card-compra {
   background-color: #ffffff;
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 16px !important;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
 }
 
 .sticky-top {
