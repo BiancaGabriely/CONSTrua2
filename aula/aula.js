@@ -73,6 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 aulaAtual = aulas[0];
             }
 
+            if (aulaAtual) {
+                try {
+                    const respostaMateriais = await fetch(`${API_URL}/materiais_apoio?aulaId=${aulaAtual.id}`);
+                    if (respostaMateriais.ok) {
+                        materiais = await respostaMateriais.json();
+                    }
+                } catch (e) {
+                    materiais = [];
+                }
+            }
+
             console.log("Curso:", curso);
             console.log("Módulos:", modulos);
             console.log("Aulas:", aulas);
@@ -81,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarCurso();
             mostrarModulos();
             mostrarAula();
+            mostrarMateriais();
             atualizarProgresso();
             carregarNotas();
 
@@ -151,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          style="display: ${moduloAberto ? "flex" : "none"};">
 
                         <span class="lesson-icon">
-                            ${estaAtual ? "▶" : "○"}
+                            ${aula.concluida ? "✓" : (estaAtual ? "▶" : "○")}
                         </span>
 
                         <div>
@@ -161,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </strong>
 
                             <small>
-                                ${formatarDuracao(aula.duracaoSegundos)}
+                                ${formatarDuracao(aula.duracaoSegundos || 0)}
                             </small>
 
                         </div>
@@ -183,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const titulo = document.querySelector(".lesson-header h1");
         const modulo = document.querySelector(".lesson-header .module");
         const video = document.getElementById("video-aula");
+        const btnConcluir = document.getElementById("btn-concluir");
 
         if (titulo) {
             titulo.textContent =
@@ -199,20 +212,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 modulo.textContent =
                     `MÓDULO ${moduloAtual.ordem}: ${moduloAtual.titulo}`;
             }
+        }    
 
             if (btnConcluir) {
             btnConcluir.textContent = aulaAtual.concluida ? "✓ Concluída" : "Marcar como Concluída";
             btnConcluir.className = aulaAtual.concluida ? "btn btn-success ms-2" : "btn btn-outline-success ms-2";
             }
-        }
+        
 
-        if (video && aulaAtual.urlVideo) {
+       if (video && aulaAtual.urlVideo) {
 
-            const url = new URL(aulaAtual.urlVideo);
+            try {
+                let videoId = "";
+                if (aulaAtual.urlVideo.includes("youtube.com/watch")) {
+                    const urlObj = new URL(aulaAtual.urlVideo);
+                    videoId = urlObj.searchParams.get("v");
+                } else if (aulaAtual.urlVideo.includes("youtu.be/")) {
+                    videoId = aulaAtual.urlVideo.split("youtu.be/")[1]?.split("?")[0];
+                }
 
-            const videoId = url.searchParams.get("v");
+                const novaSrc = videoId ? `https://www.youtube.com/embed/${videoId}` : aulaAtual.urlVideo;
 
-            video.src = `https://www.youtube.com/embed/${videoId}`;
+                // Evita recarregar o iframe do vídeo caso o src seja o mesmo
+                if (video.src !== novaSrc) {
+                    video.src = novaSrc;
+                }
+            } catch (e) {
+                if (video.src !== aulaAtual.urlVideo) {
+                    video.src = aulaAtual.urlVideo;
+                }
+            }
         }
 
         console.log("Vídeo da aula:", aulaAtual.urlVideo);
@@ -297,6 +326,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Anotação salva com sucesso!");
             }
         });
+    }
+
+    const btnPergunta = document.getElementById("btn-enviar-pergunta");
+    if (btnPergunta){
+        btnPergunta.addEventListener("click", () => {
+            const input = document.getElementById("nova-pergunta")
+            const lista = document.getElementById("lista-perguntas")
+
+            if(input && input.value.trim() !== ""){
+                if(lista.querySelector (".text-muted")){
+                    lista.innerHTML = ""
+                }
+
+                lista.innerHTML += `
+                    <div class="p-2 mb-2 bg-light rounded border">
+                        <strong>Você:</strong> ${input.value}
+                    </div>
+                `
+            }
+
+            input.value = ""
+        })
     }
 
     //adiciona os eventos dos módulos
@@ -424,8 +475,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    //abas
-    const abas = document.querySelectorAll(".tab");
+    //alternancia visual entre as abas
+    const abas = document.querySelectorAll(".tab")
+    const containerRecursos = document.getElementById("conteudo-recursos")
+    const containerNotas = document.getElementById("conteudo-notas");
+    const containerPerguntas = document.getElementById("conteudo-perguntas");
 
     abas.forEach(aba => {
 
@@ -438,6 +492,9 @@ document.addEventListener('DOMContentLoaded', () => {
             aba.classList.add("active");
 
             const tabSelecionada = aba.dataset.tab;
+            if (containerRecursos) containerRecursos.style.display = tabSelecionada === "recursos" ? "block" : "none";
+            if (containerNotas) containerNotas.style.display = tabSelecionada === "notas" ? "block" : "none";
+            if (containerPerguntas) containerPerguntas.style.display = tabSelecionada === "perguntas" ? "block" : "none";
 
             console.log("Aba selecionada:", tabSelecionada);
 
