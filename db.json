@@ -156,7 +156,8 @@
       "urlVideo": "https://www.youtube.com/watch?v=hfIUstzHs9A",
       "duracaoSegundos": 900,
       "ordem": 2,
-      "gratuita": true
+      "gratuita": true,
+      "concluida": true
     },
     {
       "id": "3",

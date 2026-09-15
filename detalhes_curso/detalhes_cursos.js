@@ -19,23 +19,40 @@ async function carregarDetalhesDoCurso(id) {
       throw new Error(`Curso com ID "${id}" não foi encontrado na API.`)
     }
     const curso = await respCurso.json()
+    console.log("curso:", curso)
 
     // Busca os módulos vinculados ao curso
     const respModulos = await fetch(`${API_URL}/modulos?cursoId=${id}`)
+
+    if(!respModulos.ok){
+      throw new Error("Erro ao carregar os módulos.")
+    }
+
     const modulos = await respModulos.json()
+    modulos.sort((a, b) => Number(a.ordem) - Number(b.ordem))
+
+    console.log("Módulos:", modulos)
 
     // Busca as aulas para agrupar por módulo
     const respAulas = await fetch(`${API_URL}/aulas`)
+    if(!respAulas.ok){
+      throw new Error("Erro ao carregar as aulas.")
+    }
+
     const aulas = await respAulas.json()
+    console.log("Aulas:", aulas)
 
     // Junta as aulas dentro de seus respectivos módulos
     const modulosComAulas = modulos.map(mod => {
       return {
         ...mod,
-        aulasList: aulas.filter(aula => aula.moduloId === mod.id)
+        aulasList: aulas.filter(aula => {
+          return Number(aula.moduloId) === Number(mod.id)
+        }).sort((a, b) => Number(a.ordem) - Number(b.ordem))
       }
     })
-
+    
+    console.log("Módulos com suas aulas:", modulosComAulas)
     renderizarCurso(curso, modulosComAulas)
   } catch (erro) {
     console.error('Erro na requisição:', erro)
@@ -84,17 +101,25 @@ function renderizarCurso(curso, modulos) {
         <div id="mod${mod.id}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" data-bs-parent="#curriculoAccordion">
           <div class="accordion-body p-0">
             <ul class="list-group list-group-flush small">
-              ${mod.aulasList && mod.aulasList.length > 0 
-                ? mod.aulasList.map(aula => `
-                  <li class="list-group-item d-flex align-items-center justify-content-between py-3 px-4">
+              ${mod.aulasList && mod.aulasList.length > 0
+        ? mod.aulasList.map(aula => `
+                  <li 
+                    class="list-group-item d-flex align-items-center justify-content-between py-3 px-4"
+                    onclick="abrirAula(${aula.id})"
+                    style="cursor: pointer;"
+                  >
                     <span class="d-flex align-items-center gap-2">
-                      <i class="bi bi-play-circle-fill text-primary fs-6"></i> ${aula.titulo}
+                      <i class="bi bi-play-circle-fill text-primary fs-6"></i>
+                      ${aula.titulo}
                     </span>
-                    ${aula.gratuita ? '<span class="badge bg-success-subtle text-success">Gratuita</span>' : ''}
+                    ${aula.gratuita
+        ? '<span class="badge bg-success-subtle text-success">Gratuita</span>'
+        : ''
+      }
                   </li>
                 `).join('')
-                : '<li class="list-group-item text-muted p-3">Nenhuma aula neste módulo.</li>'
-              }
+        : '<li class="list-group-item text-muted p-3">Nenhuma aula neste módulo.</li>'
+      }
             </ul>
           </div>
         </div>
@@ -102,6 +127,13 @@ function renderizarCurso(curso, modulos) {
     `).join('')
   }
 }
+
+// Abre a aula selecionada
+function abrirAula(aulaId) {
+  window.location.href = `../aula/aula.html?id=${aulaId}`
+}
+
+window.abrirAula = abrirAula
 
 // Funções Auxiliares Seguras
 function setElementText(id, valor) {

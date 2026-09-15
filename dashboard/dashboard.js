@@ -230,9 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function abrirCurso(cursoId) {
-        window.location.href = `../detalhes_curso/detalhes_curso.html?id=${cursoId}`;
+        window.location.href = `../detalhes_curso/detalhes_cursos.html?id=${cursoId}`;
     }
 
+    window.abrirCurso = abrirCurso;
     carregarCursos();
 
 });
