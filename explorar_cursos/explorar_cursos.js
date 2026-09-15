@@ -226,11 +226,8 @@ function mostrarTodosCursos() {
 }
 
 
-//abrir página do curso desejado
 function abrirCurso(id) {
-
-    window.location.href = `../detalhes_curso/detalhes_curso.html?id=${id}`;
-
+    window.location.href = `../detalhes_curso/detalhes_cursos.html?id=${id}`;
 }
 
 
