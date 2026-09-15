@@ -1,0 +1,42 @@
+*{
+    font-family: inter;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #d2d8e2;
+}
+
+div.container{
+    background-color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button{
+    border-radius: 8px;
+    border: none;
+    background-color: #004AC6;
+    color: white;
+    padding: 10px;
+}
+
+input{
+    padding: 15px;
+    border: #6B7280 solid 1px;
+    box-shadow: none;
+    border-radius: 8px;
+}

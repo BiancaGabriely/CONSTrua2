@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTrua</title>
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <section id="left" class="left">
+        <h1>CONSTrua</h1>
+        <h2>Domine sua arte com cursos ministrados por especialistas</h2>
+        <p>Junte-se a mais de 500 alunos em todo o mundo e transforme sua carreira por meio de nossas trilhas de aprendizado profissional estruturadas.</p>
+    </section>
+
+    <section id="right" class="right">
+        <header>
+            <h2>Bem-vindo de volta!</h2>
+            <p>Por favor, insira os seus dados para entrar.</p>
+        </header>
+
+        <form>
+            <label for="email">Endereço de Email</label>
+            <input type="text" name="email" id="email" placeholder="nome@empresa.com">
+
+            <div style="width: 100%; display: flex; flex-direction: row;">
+                <div style="width: 50%;"><label for="senha">Senha</label></div>
+                <div style="float: right; width: 50%; text-align: right ;"><a href="">Esqueceu a senha?</a></div>
+            </div>
+            <input type="text" name="senha" id="senha" placeholder="********">
+        
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                    <label class="form-check-label" for="checkDefault">
+                        Lembrar-me por 30 dias
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p>Não tem uma conta? <a href=".\cadastro\cadastro.html">Crie uma conta</a></p>
+        
+    </section>
+
+    <script src="login.js"></script>
+    
+</body>
+</html>

@@ -45,12 +45,16 @@
     {
       "id": "1",
       "nome": "Maria Oliveira",
-      "email": "maria@gmail.com"
+      "email": "maria@gmail.com",
+      "senha": "Mariazinha123",
+      "telefone": "84912341234"
     },
     {
       "id": "2",
       "nome": "João Santos",
-      "email": "joao@gmail.com"
+      "email": "joao@gmail.com",
+      "senha": "Joaozinho456",
+      "telefone": "84956785678"
     }
   ],
   "matriculas": [

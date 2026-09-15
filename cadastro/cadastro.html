@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTrua</title>
+
+    <link rel="stylesheet" href="./cadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container" class="container">
+        <header>
+            <h2>Cadastre-se no sistema</h2>
+            <p>Insira os dados pedidos para cadastrar uma nova conta</p>
+        </header>
+
+        <form action="" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+
+            <label for="email">Endereço de E-mail</label>
+            <input type="email" name="email" id="email" placeholder="nome@empresa.com">
+
+            <label for="tel">Número de telefone</label>
+            <input type="tel" name="tel" id="tel" placeholder="(00) 0 0000-0000">
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Mínimo 8 dígitos">
+
+            <label for="conf_senha">Confirmar senha</label>
+            <input type="password" name="conf_senha" id="conf_senha">
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
