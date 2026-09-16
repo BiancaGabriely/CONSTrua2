@@ -7,6 +7,10 @@ const matheus = {
     telefone: "84999296124"
 }
 
+const formulario = document.querySelector('form')
+
+var alunos = []
+
 async function getAlunos(){
     try{
         const response = await fetch(ALUNOS_URL)
@@ -18,23 +22,6 @@ async function getAlunos(){
         alunos =  await response.json()
     }catch(e){
         alert("Erro ao buscar alunos")
-    }
-}
-
-async function testePostAluno(){
-    try{
-        response = fetch(`${ALUNOS_URL}`,
-            {
-                method: "POST",
-                headers: {"content-type" : "application/json"},
-                body: JSON.stringify(matheus)
-            }
-        )
-
-        if(!response.ok)
-            throw new Error("Erro ao cadastrar aluno")        
-    }catch(e){
-        alert("Erro ao cadastrar aluno")
     }
 }
 
@@ -55,15 +42,18 @@ async function postAluno(novoAluno){
     }
 }
 
-function cadastrarAluno(){
+async function cadastrarAluno(){
     const nome = document.querySelector('input#nome').value
     const email = document.querySelector('input#email').value
     const senha = document.querySelector('input#senha').value
     const telefone = document.querySelector('input#tel').value
 
-    const conf_senha = document.querySelector('input#conf_senha')
+    const conf_senha = document.querySelector('input#conf_senha').value
 
-    if(senha === conf_senha){
+    let check = true
+    await getAlunos()
+
+    if(senha == conf_senha){
         let novoAluno = {
             nome: nome,
             email: email,
@@ -71,9 +61,26 @@ function cadastrarAluno(){
             telefone: telefone
         }
 
-        postAluno(novoAluno)
+        alunos.forEach(aluno => {
+            if(novoAluno.email == aluno.email){
+                alert("Email já cadastrado")
+                check = false
+            }
+        })
+
+        if(check == true){
+            await postAluno(novoAluno)
+        }
+        
     }else{
         alert("As senhas não são iguais")
     }
 
 }
+
+formulario.addEventListener('click', event => {
+    event.preventDefault()
+    if(event.target.id == 'submit'){
+        cadastrarAluno()
+    }
+})

@@ -4,26 +4,18 @@ let alunos = []
 
 const formulario = document.querySelector('form')
 
-function validarAluno(){
+async function validarAluno(){
     const email = document.querySelector('input#email').value
     const senha = document.querySelector('input#senha').value
 
-    getAlunos()
-    let check = false
+    await getAlunos()
 
     alunos.forEach(aluno => {
         if(aluno.email === email && aluno.senha === senha){
-            check = true
+            localStorage.clear()
+            localStorage.setItem('id', aluno.id)
         }
     })
-
-    if(check === true){
-        console.log("passou")
-    }else{
-        console.log("deu red")
-    }
-
-    console.log(alunos)
 
 }
 
@@ -41,7 +33,10 @@ async function getAlunos(){
     }
 }
 
-formulario.addEventListener('onclick', event => {
+formulario.addEventListener('click', async event => {
     event.preventDefault()
-    validarAluno()
+    console.log(event.target.id)
+    if(event.target.id == 'submit'){
+        await validarAluno()
+    }
 })
