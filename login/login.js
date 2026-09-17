@@ -12,11 +12,30 @@ async function validarAluno(){
 
     alunos.forEach(aluno => {
         if(aluno.email === email && aluno.senha === senha){
-            localStorage.clear()
-            localStorage.setItem('id', aluno.id)
+            aluno.logado = true
+            editAluno(aluno)
+            window.location.href = `../dashboard/dashboard.html`;
+            return true
         }
     })
 
+}
+
+async function editAluno(aluno){
+    try{
+        const response  = await fetch(`${ALUNOS_URL}/${aluno.id}`,
+            {
+                method: "PUT",
+                headers: {"content-type":"application/json"},
+                body: JSON.stringify(aluno)
+            }
+        )
+
+        if(!response.ok)
+            throw new Error("Erro ao processar usuário")
+    }catch(e){
+        alert("Erro ao processar usuário")
+    }
 }
 
 async function getAlunos(){

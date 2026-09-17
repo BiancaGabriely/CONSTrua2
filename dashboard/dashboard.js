@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const API_URL = 'http://localhost:3000/cursos';
     const MATRICULAS_URL = 'http://localhost:3000/matriculas';
+    const ALUNOS_URL = 'http://localhost:3000/alunos';
 
     let cursos = [];
     let matriculas = [];
     let cursosAluno = [];
+    let alunoLogado = {};
 
     const ctx = document.getElementById('grafico');
 
@@ -73,6 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
         grafico.update();
     });
 
+    window.addEventListener("beforeunload", function (event) {
+        alunos.forEach(async aluno => {
+            if(aluno.logado === true){
+                aluno.logado = false
+                await editAluno(aluno)
+            }
+        })
+
+        event.preventDefault();
+    });
+
     const btnGrid = document.getElementById('btn-visualizacao-grid');
     const btnLista = document.getElementById('btn-visualizacao-lista');
 
@@ -110,28 +123,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const respostaCursos = await fetch(API_URL);
             const respostaMatriculas = await fetch(MATRICULAS_URL);
+            const responseAlunos = await fetch(ALUNOS_URL);
 
-            if (!respostaCursos.ok || !respostaMatriculas.ok) {
+            if (!respostaCursos.ok || !respostaMatriculas.ok || !responseAlunos.ok) {
                 throw new Error('Erro ao carregar os cursos');
             }
 
             cursos = await respostaCursos.json();
             matriculas = await respostaMatriculas.json();
+            alunos = await responseAlunos.json();
 
-            const alunoID = 1;
+            alunos.forEach(aluno => {
+                if(aluno.logado === true){
+                    const matriculasAluno = matriculas.filter(matricula => {
+                        return Number(matricula.alunoId) === Number(aluno.id);
+                    });
+
+                    cursosAluno = cursos.filter(curso => {
+                        return matriculasAluno.some(matricula => {
+                            return Number(matricula.cursoId) === Number(curso.id);
+                        });
+                    });              
+                    
+                    return
+                }
+            })
 
             console.log("Cursos:", cursos);
             console.log("Matrículas:", matriculas);
-
-            const matriculasAluno = matriculas.filter(matricula => {
-                return Number(matricula.alunoId) === Number(alunoID);
-            });
-
-            cursosAluno = cursos.filter(curso => {
-                return matriculasAluno.some(matricula => {
-                    return Number(matricula.cursoId) === Number(curso.id);
-                });
-            });
 
             mostrarCursos(cursosAluno);
 
@@ -227,6 +246,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             `;
         });
+    }
+
+    async function editAluno(aluno){
+        try{
+            const response  = await fetch(`${ALUNOS_URL}/${aluno.id}`,
+                {
+                    method: "PUT",
+                    headers: {"content-type":"application/json"},
+                    body: JSON.stringify(aluno)
+                }
+            )
+
+            if(!response.ok)
+                throw new Error("Erro ao processar usuário")
+        }catch(e){
+            alert("Erro ao processar usuário")
+        }
     }
 
     function abrirCurso(cursoId) {

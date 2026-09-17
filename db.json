@@ -47,14 +47,16 @@
       "nome": "Maria Oliveira",
       "email": "maria@gmail.com",
       "senha": "Mariazinha123",
-      "telefone": "84912341234"
+      "telefone": "84912341234",
+      "logado": false
     },
     {
       "id": "2",
       "nome": "João Santos",
       "email": "joao@gmail.com",
       "senha": "Joaozinho456",
-      "telefone": "84956785678"
+      "telefone": "84956785678",
+      "logado": false
     }
   ],
   "matriculas": [
